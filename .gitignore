@@ -1,0 +1,7 @@
+*~
+.tools
+.mamba
+mamba/
+genome/
+fastq/
+alignment/
