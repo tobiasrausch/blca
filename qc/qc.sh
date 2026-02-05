@@ -6,11 +6,12 @@ export PATH=${BASEDIR}/../mamba/bin:${PATH}
 
 HG=${BASEDIR}/../genome/hg38.fa
 
-for BAM in ${BASEDIR}/../../alignment/ont/*.bam
+for BAM in ${BASEDIR}/../alignment/*.bam
 do
     if [ -f ${BAM} ]
     then
 	ID=`echo ${BAM} | sed 's/^.*\///' | sed 's/.bam$//'`
+	echo ${ID}
 	NanoStat --bam ${BAM} > ${ID}.nanostat
 	alfred qc -r ${HG} -j ${ID}.json.gz -o ${ID}.tsv.gz ${BAM}
     fi
