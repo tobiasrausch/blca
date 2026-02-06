@@ -57,3 +57,9 @@ For the ONT long-read data we applied [Severus](https://github.com/KolmogorovLab
 To compute the consensus of the Severus and Delly SV calls:
 
 `cd consensusSV/ && ./somaticSV.sh`
+
+## Discovery of L1 fragments inserted at structural variant breakpoints
+
+To discovery L1 fragments inserted at SV breakpoints we used [BreakTracer](https://github.com/tobiasrausch/breaktracer/releases).
+
+`cd breaktracer/ && ./bt.sh`
