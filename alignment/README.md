@@ -1,1 +1,1 @@
-This is the directory for the alignment data deposited at EGA (EGAS00001008321).
+This is the directory for the long-read tumor alignment data.

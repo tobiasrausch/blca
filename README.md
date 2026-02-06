@@ -48,6 +48,14 @@ To compute the consensus of ClairS and DeepSomatic:
 
 `cd consensusSNV && ./consensus.sh`
 
+Tumor-only sequencing approaches overestimate the TMB (tumor mutational burden) due to rare and ultra-rare germline variants that are missing in panel-of-normals. Therefore, you can optionally genotype all variants using matched short-read control data.
+
+`cd consensusSNV/genotypeSR/ && make all && ./genotypeSR.sh`
+
+Afterwards you can recompute the consensus, including the additional filtering against the matched controls.
+
+`cd consensusSNV && ./consensus.sh`
+
 ## Structural variant calling
 
 For the ONT long-read data we applied [Severus](https://github.com/KolmogorovLab/Severus) and [Delly](https://github.com/dellytools/delly) to call structural variants with the [Schloissnig et al. data](https://www.nature.com/articles/s41586-025-09290-7) as a panel-of-normals.
