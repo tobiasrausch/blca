@@ -50,7 +50,7 @@ To compute the consensus of ClairS and DeepSomatic:
 
 ## Structural variant calling
 
-For the ONT long-read data we applied [Severus](https://github.com/KolmogorovLab/Severus] and [Delly](https://github.com/dellytools/delly) to call structural variants with the [Schloissnig et al. data](https://www.nature.com/articles/s41586-025-09290-7) as a panel-of-normals.
+For the ONT long-read data we applied [Severus](https://github.com/KolmogorovLab/Severus) and [Delly](https://github.com/dellytools/delly) to call structural variants with the [Schloissnig et al. data](https://www.nature.com/articles/s41586-025-09290-7) as a panel-of-normals.
 
 `cd sv/ && ./sv.sh`
 
