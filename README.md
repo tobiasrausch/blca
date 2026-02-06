@@ -46,6 +46,7 @@ SNVs and InDel calling using [ClairS](https://github.com/HKU-BAL/ClairS) and [De
 
 To compute the consensus of ClairS and DeepSomatic:
 
+`cd consensusSNV && ./consensus.sh`
 
 ## Structural variant calling
 
