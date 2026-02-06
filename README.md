@@ -30,3 +30,29 @@ To calculate the alignment error rate, genome coverage and other QC statistics.
 
 `cd qc/ && ./qc.sh`
 
+## Read-depth profiles and copy-number variants
+
+Genome-wide read-depth profiles
+
+`cd coverage/ && ./coverage.sh`
+
+## Single-nucleotide variant (SNVs) calling and small insertions and deletions (InDels)
+
+SNVs and InDel calling using [ClairS](https://github.com/HKU-BAL/ClairS) and [DeepSomatic](https://github.com/google/deepsomatic).
+
+`cd deepsomatic/ && ./deepsomatic.sh`
+
+`cd clairS/ && make all && ./clairS.sh`
+
+To compute the consensus of ClairS and DeepSomatic:
+
+
+## Structural variant calling
+
+For the ONT long-read data we applied [Severus](https://github.com/KolmogorovLab/Severus] and [Delly](https://github.com/dellytools/delly) to call structural variants with the [Schloissnig et al. data](https://www.nature.com/articles/s41586-025-09290-7) as a panel-of-normals.
+
+`cd sv/ && ./sv.sh`
+
+To compute the consensus of the Severus and Delly SV calls:
+
+`cd consensusSV/ && ./somaticSV.sh`
