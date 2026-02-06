@@ -31,9 +31,9 @@ do
     ./trf409.linux64 ${ID}/insertions_seq.fa 2 7 7 80 10 10 500 -h -d -ngs 1 > ${ID}/ins_trf.out
     PYTHONPATH=`pwd`/SVAN/GAPI:`pwd`/SVAN python3 SVAN/SVAN-INS.py ${ID}.ins.vcf ${ID}/ins_trf.out hg38/VNTR_hg38.bed hg38/EXONS_hg38.bed hg38/REPEATS_hg38.bed hg38/CONSENSUS.fa ${HG} ${ID}
     mv ${ID}.vcf ${ID}.ins.vcf
-    bgzip ${ID}.ins.vcf
+    cat ${ID}.ins.vcf | cut -f 1-8 | sed 's/\tLowQual\t/\tPASS\t/' | bcftools sort - | bgzip > ${ID}.ins.vcf.gz
     tabix ${ID}.ins.vcf.gz
-    rm -rf ${ID}/ tmp/
+    rm -rf ${ID}/ tmp/ ${ID}.ins.vcf
 
     ## Deletions
     mkdir -p ${ID}
@@ -44,7 +44,7 @@ do
     ./trf409.linux64 ${ID}/deletions_seq.fa 2 7 7 80 10 10 500 -h -d -ngs 1 > ${ID}/del_trf.out
     PYTHONPATH=`pwd`/SVAN/GAPI:`pwd`/SVAN python3 SVAN/SVAN-DEL.py ${ID}.del.vcf ${ID}/del_trf.out hg38/VNTR_hg38.bed hg38/EXONS_hg38.bed hg38/REPEATS_hg38.bed hg38/CONSENSUS.fa ${HG} ${ID}
     mv ${ID}.vcf ${ID}.del.vcf
-    bgzip ${ID}.del.vcf
+    cat ${ID}.del.vcf | cut -f 1-8 | sed 's/\tLowQual\t/\tPASS\t/' | bcftools sort - | bgzip > ${ID}.del.vcf.gz
     tabix ${ID}.del.vcf.gz
-    rm -rf ${ID}/ tmp/
+    rm -rf ${ID}/ tmp/ ${ID}.del.vcf
 done
