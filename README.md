@@ -63,3 +63,9 @@ To compute the consensus of the Severus and Delly SV calls:
 To discovery L1 fragments inserted at SV breakpoints we used [BreakTracer](https://github.com/tobiasrausch/breaktracer/releases).
 
 `cd breaktracer/ && ./bt.sh`
+
+## Methylation calling
+
+[Modkit](https://github.com/nanoporetech/modkit) was used to create pileup files of 5mC modified bases.
+
+`cd modkit/ && ./modkit.sh`
