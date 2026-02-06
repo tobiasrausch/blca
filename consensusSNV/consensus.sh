@@ -40,12 +40,12 @@ do
 		    rm ${ID}tumor.filtered.clair3.bcf ${ID}tumor.filtered.clair3.bcf.csi
 		fi
 
-		## Filter against short-read illumina
+		## Filter against short-read controls
 		if [ ! -f ${ID}tumor.filtered.bcf ]
 		then
-		    if [ -f genoIllumina/${ID}tumor.bcf ]
+		    if [ -f genotypeSR/${ID}tumor.bcf ]
 		    then
-			bcftools view -i 'AC>0' -O b -o ${ID}.blood.bcf genoIllumina/${ID}tumor.bcf
+			bcftools view -i 'AC>0' -O b -o ${ID}.blood.bcf genotypeSR/${ID}tumor.bcf
 			bcftools index ${ID}.blood.bcf
 
 			## Remove blood calls

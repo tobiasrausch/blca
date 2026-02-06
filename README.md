@@ -66,6 +66,10 @@ To compute the consensus of the Severus and Delly SV calls:
 
 `cd consensusSV/ && ./somaticSV.sh`
 
+As stated above, tumor-only sequencing approaches overestimate the TMB but short-reads have severe limitations in detecting SVs compared to long-reads, in particular for insertions. We therefore use an approach that implants the insertions into the reference to identify remaining rare and ultra-rare germline SVs in the matched short-read control data.
+
+`cd consensusSV/genotypingSR/ && make all && ./genotypingSR.sh`
+
 ## Discovery of L1 fragments inserted at structural variant breakpoints
 
 To discovery L1 fragments inserted at SV breakpoints we used [BreakTracer](https://github.com/tobiasrausch/breaktracer/releases).
@@ -77,6 +81,12 @@ To discovery L1 fragments inserted at SV breakpoints we used [BreakTracer](https
 We used [SVAN](https://github.com/REPBIO-LAB/SVAN) and [Tandem Repeats Finder](https://github.com/Benson-Genomics-Lab/TRF) to annotate all mobile element insertions.
 
 `cd mei/ && make all && ./mei.sh && ./postprocess_SVAN.sh`
+
+## ecDNA discovery
+
+We employed [CoRAL](https://github.com/AmpliconSuite/CoRAL) to reconstruct ecDNA structures from long-read tumor data.
+
+`cd ecDNA/ && make all && ./ecDNA.sh`
 
 ## Methylation calling
 
