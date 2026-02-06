@@ -64,6 +64,12 @@ To discovery L1 fragments inserted at SV breakpoints we used [BreakTracer](https
 
 `cd breaktracer/ && ./bt.sh`
 
+## Mobile element insertion annotation
+
+We used [SVAN](https://github.com/REPBIO-LAB/SVAN) and [Tandem Repeats Finder](https://github.com/Benson-Genomics-Lab/TRF) to annotate all mobile element insertions.
+
+`cd mei/ && ./mei.sh`
+
 ## Methylation calling
 
 [Modkit](https://github.com/nanoporetech/modkit) was used to create pileup files of 5mC modified bases.
