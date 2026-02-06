@@ -76,7 +76,7 @@ To discovery L1 fragments inserted at SV breakpoints we used [BreakTracer](https
 
 We used [SVAN](https://github.com/REPBIO-LAB/SVAN) and [Tandem Repeats Finder](https://github.com/Benson-Genomics-Lab/TRF) to annotate all mobile element insertions.
 
-`cd mei/ && ./mei.sh`
+`cd mei/ && make all && ./mei.sh && ./postprocess_SVAN.sh`
 
 ## Methylation calling
 
