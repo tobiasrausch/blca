@@ -8,6 +8,7 @@ HG=${BASEDIR}/../../genome/hg38.fa
 for F in ../*.somatic.bcf
 do
     ID=`echo ${F} | sed 's/^.*\///' | sed 's/.somatic.bcf//'`
+    PID=`echo ${ID} | sed 's/tumor//'`
     GERM=`echo ${ID} | sed 's/tumor/germline/' | sed 's/B060/B60/'`
     if [ -f ${BASEDIR}/../../control/${GERM}.bam ]
     then
