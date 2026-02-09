@@ -105,3 +105,9 @@ For the short-read control data, we used [Delly](https://github.com/dellytools/d
 `cd sr-analysis/ && ./melt.sh`
 
 `cd sr-analysis/ && ./sarek.sh`
+
+## Short-read bulk RNA-Seq
+
+The short-read RNA-Seq data was analyzed with the [nf-core/rnaseq](https://github.com/nf-core/rnaseq/) pipeline to quantify the RNA gene expression and discover gene fusion candidates.
+
+`cd rna-analysis/ && ./rnaseq.sh`
