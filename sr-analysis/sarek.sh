@@ -13,7 +13,7 @@ then
     curl -s https://get.nextflow.io | bash
 fi
 
-## Collect patients
+## Collect samples
 if [ ! -f samples.csv ]
 then
     echo "patient,sex,status,sample,lane,fastq_1,fastq_2" > samples.csv
