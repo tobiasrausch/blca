@@ -111,3 +111,11 @@ For the short-read control data, we used [Delly](https://github.com/dellytools/d
 The short-read RNA-Seq data was analyzed with the [nf-core/rnaseq](https://github.com/nf-core/rnaseq/) pipeline to quantify the RNA gene expression and discover gene fusion candidates.
 
 `cd rna-analysis/ && ./rnaseq.sh`
+
+License
+-------
+All scripts are distributed under the BSD 3-Clause license. Consult the accompanying [LICENSE](https://github.com/tobiasrausch/blca/blob/main/LICENSE) file for more details.
+
+Credits
+-------
+[HTSlib](https://github.com/samtools/htslib), [Samtools](https://github.com/samtools/samtools) and [Bcftools](https://github.com/samtools/bcftools) are heavily used for all genomic alignment and variant processing. [nf-core](https://github.com/nf-core) pipelines are employed for short-read variant calling and RNA-Seq data analysis. Most importantly, we thank all patients for participating in the study. 
