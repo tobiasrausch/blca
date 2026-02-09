@@ -70,6 +70,8 @@ As stated above, tumor-only sequencing approaches overestimate the TMB but short
 
 `cd consensusSV/genotypingSR/ && make all && ./genotypingSR.sh`
 
+Afterwards you can recompute the consensus, including the additional filtering against the matched controls.
+
 ## Discovery of L1 fragments inserted at structural variant breakpoints
 
 To discovery L1 fragments inserted at SV breakpoints we used [BreakTracer](https://github.com/tobiasrausch/breaktracer/releases).
@@ -93,3 +95,13 @@ We employed [CoRAL](https://github.com/AmpliconSuite/CoRAL) to reconstruct ecDNA
 [Modkit](https://github.com/nanoporetech/modkit) was used to create pileup files of 5mC modified bases.
 
 `cd modkit/ && ./modkit.sh`
+
+## Short-read control data analysis
+
+For the short-read control data, we used [Delly](https://github.com/dellytools/delly) to call germline structural variants, [MELT](https://melt.igs.umaryland.edu/) to discover germline mobile element insertions and the nf-core pipeline [sarek](https://github.com/nf-core/sarek) and [oncoanalyser](https://github.com/nf-core/oncoanalyser) for short variants (SNVs and InDels).
+
+`cd sr-analysis/ && ./delly.sh`
+
+`cd sr-analysis/ && ./melt.sh`
+
+`cd sr-analysis/ && ./sarek.sh`
