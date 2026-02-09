@@ -26,6 +26,7 @@ do
 	    ## Implant and genotype SVs using short-reads
 	    if [ -f genotypingSR/${PID}.depth.regions.bed.gz ]
 	    then
+		echo ${PID}
 		COV=`grep -P "^total\t" genotypingSR/${PID}.depth.mosdepth.summary.txt | cut -f 4`
 		zcat genotypingSR/${PID}.depth.regions.bed.gz | sed "s/$/\t${COV}/" | awk '$5/$6 > 0.5' | cut -f 4 | sort | uniq > remove.sv
 		bcftools view ${ID}.somatic.bcf | grep -v -w -Ff remove.sv | bcftools view -O b -o ${ID}.somatic.bcf.tmp -
