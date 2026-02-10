@@ -106,6 +106,12 @@ For the short-read control data, we used [Delly](https://github.com/dellytools/d
 
 `cd sr-analysis/ && ./sarek.sh`
 
+## PCAWG analysis overlapping CNV breakpoints with and without SVs with somatic L1 insertions
+
+Using the short-read [PCAWG data](https://www.nature.com/articles/s41586-020-1969-6), we classified each copy-number variant (CNV) breakpoint as either SV-explained or SV-unexplained using a small overlap window of 5kbp. We also assessed the overlap between somatic L1 insertions for both categories, CNVs with and without SVs. The fraction of somatic L1s is significantly greater for CNV breakpoints without an SV, indicating a hidden landscape of SVs that involves L1 fragments at the SV breakpoint and these complex somatic SVs are apparently largely inaccessible to short-reads. For long-reads, [BreakTracer](https://github.com/tobiasrausch/breaktracer) resolves these complex SVs involving L1 sequence fragments.
+
+`cd cnv_sv_l1/ && ./cnv.sh`
+
 ## Short-read bulk RNA-Seq
 
 The short-read RNA-Seq data was analyzed with the [nf-core/rnaseq](https://github.com/nf-core/rnaseq/) pipeline to quantify the RNA gene expression and discover gene fusion candidates.
