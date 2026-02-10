@@ -118,6 +118,10 @@ The short-read RNA-Seq data was analyzed with the [nf-core/rnaseq](https://githu
 
 `cd rna-analysis/ && ./rnaseq.sh`
 
+To quantify locus-specific L1 expression, we used the [L1EM](https://github.com/FenyoLab/L1EM) tool.
+
+`cd rna-analysis/ && ./l1em.sh`
+
 License
 -------
 All scripts are distributed under the BSD 3-Clause license. Consult the accompanying [LICENSE](https://github.com/tobiasrausch/blca/blob/main/LICENSE) file for more details.
