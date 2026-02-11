@@ -120,7 +120,7 @@ The short-read RNA-Seq data was analyzed with the [nf-core/rnaseq](https://githu
 
 To quantify locus-specific L1 expression, we used the [L1EM](https://github.com/FenyoLab/L1EM) tool.
 
-`cd rna-analysis/ && ./l1em.sh`
+`cd rna-analysis/ && make all && ./l1em.sh`
 
 License
 -------

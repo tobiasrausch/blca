@@ -38,11 +38,12 @@ do
 		bwa mem -R "@RG\tID:${ID}\tSM:${ID}" -t 24 ${BASEDIR}/hg38.fa ${FQ1} ${FQ2} | samtools fixmate -m - - | samtools sort -o ${ID}.bam -
 		samtools index ${ID}.bam
 	    fi
-	    bash -e L1EM/run_L1EM.sh ${BASEDIR}/${ID}.bam ${BASEDIR}/L1EM/ ${BASEDIR}/hg38.fa
+	    mkdir results/
+	    cd results/
+	    bash -e ${BASEDIR}/L1EM/run_L1EM.sh ${BASEDIR}/${ID}.bam ${BASEDIR}/L1EM/ ${BASEDIR}/hg38.fa
 	    mkdir -p ${ID}
 	    mv X_final.pkl names_final.pkl filter_L1HS_FPM.txt l1hs_transcript_counts.txt full_counts.txt baminfo.txt ${ID}/
-	    rm -rf G_of_R/ split_fqs/ idL1reads/
-	    rm -rf ${ID}.bam ${ID}.bam.bai
+	    cd ../
 	fi
     fi
 done
